@@ -1,8 +1,21 @@
-//
-// Created by parallels on 1/10/23.
-//
-
 #ifndef SIR_SIMULATION_H
 #define SIR_SIMULATION_H
 
-#endif //SIR_SIMULATION_H
+#include "population.hpp"
+#include "disease.hpp"
+
+class Simulation {
+
+public:
+    Simulation(Population population, Disease disease);
+    ~Simulation();
+
+    void run();
+
+private:
+    Population *population;
+    Disease *disease;
+
+};
+
+#endif

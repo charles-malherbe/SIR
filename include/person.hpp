@@ -1,18 +1,19 @@
-//
-// Created by Charles MALHERBE for SIR Modelisation
-//
+#ifndef SIR_PERSON_H
+#define SIR_PERSON_H
 
-#ifndef SIR_PERSON_HPP
-#define SIR_PERSON_HPP
-    class Person {
-        public:
-            Person();
-            Person(const Person &person);
-            Person &operator=(const Person &person);
-            ~Person();
-            int getAge();
+#include "position.hpp"
 
-    protected:
-            int age;
-    };
+class Person {
+
+    public:
+        Person(Position position);
+        ~Person();
+        Position getPosition();
+        void setPosition(Position position);
+
+    private:
+        Position position;
+
+};
+
 #endif
