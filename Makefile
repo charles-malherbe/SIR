@@ -1,7 +1,7 @@
 NAME = pandemic
-SRC = ./src/position.cpp
+SRC = ./src/*.cpp
 CC = g++
-CFLAGS = -Wall -Wextra -Werror -std=c++11 - I./include/
+CFLAGS = -Wall -Wextra -Werror -std=c++11 -I ./include/
 
 all:
 	$(CC) $(CFLAGS) main.cpp $(SRC) -o $(NAME)

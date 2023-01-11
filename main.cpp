@@ -4,35 +4,36 @@
 #include "./include/sir.hpp"
 
 int main() {
-    /* Population population = getPopulation();
+    Population population = getPopulation();
     Disease disease = getDisease();
     Simulation simulation = Simulation(population, disease);
-    simulation.run(); */
+    simulation.run();
     return 0;
+}
+
+Population getPopulation()
+{
+    int size;
+    int infected;
+    cout << BLUE << "Entrer la taille de la population : " << PURPLE;
+    cin >> size;
+    cout << BLUE << "Entrer le nombre de personnes infectées : " << PURPLE;
+    cin >> infected;
+    Population population(size, infected, 0, 0);
+    return population;
 }
 
 Disease getDisease() {
     string name;
     int infectivity;
     int recovery;
-    cout << "Entrer le nom de la maladie : ";
+    cout << BLUE << "Entrer le nom de la maladie : " << PURPLE;
     cin >> name;
-    cout << "Entrer le taux d'infectiosité : ";
+    cout << BLUE <<  "Entrer le taux d'infectiosité : " << PURPLE;
     cin >> infectivity;
-    cout << "Entrer le taux de récupération : ";
+    cout << BLUE <<  "Entrer le taux de récupération : " << PURPLE;
     cin >> recovery;
-    return Disease(name, infectivity, recovery);
+    cout << RESET;
+    Disease disease(name, infectivity, recovery);
+    return disease;
 }
-/*
-Population getPopulation()
-{
-    int size;
-    int infected;
-    cout << "Entrer la taille de la population : ";
-    cin >> size;
-    cout << "Entrer le nombre de personnes infectées : ";
-    cin >> infected;
-    Population population(size, infected, 0, 0);
-    return population;
-}
-*/
