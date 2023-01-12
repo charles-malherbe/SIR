@@ -8,10 +8,21 @@ Nous devons développer une solution informatique pour un client qui nécessite 
 * [ ] Création héritage (person, healthy, sick, recovered, dead)
 * [ ] Correction des équations
 * [ ] Gestion SFML
+* [ ] SFML Graph (https://github.com/jerr-it/SFGraphing)
+* [ ] Simple SFML GUI
+* [ ] Gestion des évènements
 
 ## Prérequis
 
 #### SFML
+
+``pip install sfml``
+
+#### Simple SFML GUI
+
+``pip install sfml``
+
+#### SFML Graph
 
 ``pip install sfml``
 
