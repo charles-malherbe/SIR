@@ -1,9 +1,8 @@
 
 #include "../include/person.hpp"
-#include "../include/position.hpp"
 
-Person::Person(Position position) {
-    this->position = position;
+Person::Person(int x, int y) {
+    this->shape.setPosition(x, y);
 }
 
 Person::~Person() {
@@ -13,6 +12,10 @@ Position Person::getPosition() {
     return this->position;
 }
 
-void Person::setPosition(Position position) {
-    this->position = position;
+sf::CircleShape Person::getShape() {
+    return shape;
+}
+
+void Person::move() {
+
 }

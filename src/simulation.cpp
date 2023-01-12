@@ -17,7 +17,28 @@ void Simulation::run() {
                 window.close();
         }
         window.clear(sf::Color::Black);
-        // DRAW ALL
+        this->draw(window);
         window.display();
     }
+}
+
+void Simulation::draw(sf::RenderWindow &window) {
+    this->drawPeople(window);
+    this->drawText(window);
+}
+
+void Simulation::drawPeople(sf::RenderWindow &window) {
+    for (int i = 0; i < this->population->getSize(); i++) {
+        window.draw(this->population->getPerson(i).getShape());
+    }
+}
+
+void Simulation::drawText(sf::RenderWindow &window) {
+    sf::Text text;
+    text.setFont(sf::Font::getDefaultFont());
+    text.setString("Pandemic - " + this->disease->getName());
+    text.setCharacterSize(24);
+    text.setFillColor(sf::Color::Magenta);
+    text.setPosition(10, 10);
+    window.draw(text);
 }

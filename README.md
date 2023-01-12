@@ -3,11 +3,17 @@
 
 Nous devons développer une solution informatique pour un client qui nécessite résoudre les équations d'une modèle épidémiologique SIR.
 
+## Todo
+
+* [ ] Création héritage (person, healthy, sick, recovered, dead)
+* [ ] Correction des équations
+* [ ] Gestion SFML
+
 ## Prérequis
 
-#### Tkinter
+#### SFML
 
-``pip install tk``
+``pip install sfml``
 
 ## Demonstration
 

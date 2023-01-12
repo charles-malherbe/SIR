@@ -1,18 +1,19 @@
 #ifndef SIR_PERSON_H
 #define SIR_PERSON_H
 
-#include "position.hpp"
+#include <stdlib.h>
+#include <SFML/Graphics.hpp>
 
-class Person {
+ class Person {
 
     public:
-        Person(Position position);
+        Person(int x, int y);
         ~Person();
-        Position getPosition();
-        void setPosition(Position position);
+        sf::CircleShape getShape();
+        void move();
 
-    private:
-        Position position;
+    protected:
+        sf::CircleShape shape;
 
 };
 

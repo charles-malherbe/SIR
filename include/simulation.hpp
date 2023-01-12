@@ -13,6 +13,9 @@ public:
     ~Simulation();
 
     void run();
+    void draw(sf::RenderWindow &window);
+    void drawPeople(sf::RenderWindow &window);
+    void drawText(sf::RenderWindow &window);
 
 private:
     Population *population;
