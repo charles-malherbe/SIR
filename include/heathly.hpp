@@ -1,5 +1,5 @@
-#ifndef SIR_PERSON_H
-#define SIR_PERSON_H
+#ifndef SIR_HEATHLY_H
+#define SIR_HEATHLY_H
 
 #include <stdlib.h>
 

@@ -12,6 +12,7 @@ using namespace std;
         void setInfectivity(double);
         void setRecovery(double);
         double getInfectivity();
+        string getName();
         double getRecovery();
 
     private:

@@ -24,3 +24,7 @@ double Disease::getInfectivity() {
 double Disease::getRecovery() {
     return this->recovery;
 }
+
+string Disease::getName() {
+    return this->name;
+}

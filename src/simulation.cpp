@@ -9,7 +9,7 @@ Simulation::~Simulation() {
 }
 
 void Simulation::run() {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Pandemic - " + this->disease.getName(), sf::Style::Close | sf::Style::Titlebar);
+    sf::RenderWindow window(sf::VideoMode(800, 600), "Pandemic - " + this->disease->getName(), sf::Style::Close | sf::Style::Titlebar);
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -35,7 +35,6 @@ void Simulation::drawPeople(sf::RenderWindow &window) {
 
 void Simulation::drawText(sf::RenderWindow &window) {
     sf::Text text;
-    text.setFont(sf::Font::getDefaultFont());
     text.setString("Pandemic - " + this->disease->getName());
     text.setCharacterSize(24);
     text.setFillColor(sf::Color::Magenta);

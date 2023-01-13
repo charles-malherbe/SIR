@@ -1,20 +1,20 @@
 #include "../include/population.hpp"
 #include "../include/sick.hpp"
 #include "../include/recovered.hpp"
-#include "../include/Heathly.hpp"
+#include "../include/heathly.hpp"
 
-Population::Population(int size, int infected, int recovered, int dead) {
+Population::Population(int size, int sick, int recovered, int dead) {
     this->size = size;
-    this->infected = infected;
+    this->sick = sick;
     this->recovered = recovered;
     this->dead = dead;
     for (int i = 0; i < size; i++) {
-        if (i < infected) {
-            people.push_back(Sick());
-        } else if (i < infected + recovered) {
-            people.push_back(Recovered());
+        if (i < sick) {
+            people.push_back(Sick(0,0));
+        } else if (i < sick + recovered) {
+            people.push_back(Recovered(0,0));
         } else {
-            people.push_back(Heathly());
+            people.push_back(Heathly(0,0));
         }
     }
 }

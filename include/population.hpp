@@ -9,7 +9,7 @@ using namespace std;
 class Population {
 
 public:
-    Population(int size, int infected, int recovered, int dead);
+    Population(int size, int sick, int recovered, int dead);
     ~Population();
     int getSize();
     Person getPerson(int index);
@@ -17,7 +17,7 @@ public:
 
 private:
     int size;
-    int infected;
+    int sick;
     int recovered;
     int dead;
     vector<Person> people;

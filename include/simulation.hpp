@@ -2,6 +2,8 @@
 #define SIR_SIMULATION_H
 
 #include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Window.hpp>
 
 #include "population.hpp"
 #include "disease.hpp"

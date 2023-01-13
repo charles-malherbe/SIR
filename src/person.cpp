@@ -8,10 +8,6 @@ Person::Person(int x, int y) {
 Person::~Person() {
 }
 
-Position Person::getPosition() {
-    return this->position;
-}
-
 sf::CircleShape Person::getShape() {
     return shape;
 }

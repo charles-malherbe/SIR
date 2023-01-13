@@ -8,6 +8,7 @@
 #include <cmath>
 #include <cstdio>
 #include <iostream>
+
 using namespace std;
 
 #include "disease.hpp"

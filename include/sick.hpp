@@ -1,5 +1,5 @@
-#ifndef SIR_PERSON_H
-#define SIR_PERSON_H
+#ifndef SIR_SICK_H
+#define SIR_SICK_H
 
 #include <stdlib.h>
 
