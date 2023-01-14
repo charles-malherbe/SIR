@@ -5,12 +5,8 @@ Nous devons développer une solution informatique pour un client qui nécessite 
 
 ## Todo
 
-* [ ] Création héritage (person, healthy, sick, recovered, dead)
-* [ ] Correction des équations
-* [ ] Gestion SFML
-* [ ] SFML Graph (https://github.com/jerr-it/SFGraphing)
-* [ ] Simple SFML GUI
-* [ ] Gestion des évènements
+* [ ] SIR
+* [ ] SIRD
 
 ## Prérequis
 
