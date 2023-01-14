@@ -15,9 +15,9 @@ public:
 protected:
         int removed; // Removed
 
-        int alpha; // Probability of removal (by decapitation)
-        int beta; // Probability of transmission
-        int zeta; // Probability of resurrection (if dead)
+        double alpha; // Probability of removal (by decapitation)
+        double beta; // Probability of transmission
+        double zeta; // Probability of resurrection (if dead)
 
         void draw();
 };

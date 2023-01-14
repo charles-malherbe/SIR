@@ -14,9 +14,9 @@ public:
 protected:
     int incubation; // Time of incubation
 
-    int beta; // Probability of infection
-    int theta; // Probability of death
-    int epsilon; // Probability of recovery
+    double beta; // Probability of infection
+    double theta; // Probability of death
+    double epsilon; // Probability of recovery
 
     void draw();
 };

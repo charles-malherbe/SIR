@@ -3,6 +3,10 @@
 
 Nous devons développer une solution informatique pour un client qui nécessite résoudre les équations d'une modèle épidémiologique.
 
+## Utilisation
+
+Pour lancer le programme, il faut exécuter la commande suivante :  ``make``
+
 ## Todo
 
 * [ ] SZR
@@ -21,6 +25,7 @@ Nous devons développer une solution informatique pour un client qui nécessite 
 ## Authors
 
 - [@charles-malherbe](https://www.github.com/charles-malherbe)
+- [@ArthurPerret08](https://www.github.com/ArthurPerret08)
 
 ## Support
 
