@@ -30,3 +30,8 @@ void Sizr::display() {
     cout << GREEN  << "Zombies : "  << RESET << this->zombies << endl;
     cout << GREEN  << "Removed : " << RESET << this->removed << endl;
 }
+
+void Sizr::draw() {
+    cout << endl;
+    cout << YELLOW << "Drawing SIZR model..." << RESET << endl;
+}

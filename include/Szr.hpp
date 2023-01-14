@@ -2,9 +2,7 @@
 #define SIMULATION_SIR_HPP
 
 #include "Simulation.hpp"
-
-#include <iostream>
-using namespace std;
+#include "Colors.hpp"
 
 class Szr: public Simulation {
 public:
@@ -20,6 +18,8 @@ protected:
         int alpha; // Probability of removal (by decapitation)
         int beta; // Probability of transmission
         int zeta; // Probability of resurrection (if dead)
+
+        void draw();
 };
 
 #endif

@@ -1,26 +1,18 @@
 
-# Modèle épidémiologique SIR
+# When zombies attack !
 
-Nous devons développer une solution informatique pour un client qui nécessite résoudre les équations d'une modèle épidémiologique SIR.
+Nous devons développer une solution informatique pour un client qui nécessite résoudre les équations d'une modèle épidémiologique.
 
 ## Todo
 
-* [ ] SIR
-* [ ] SIRD
+* [ ] SZR
+* [ ] SIZR
 
 ## Prérequis
 
-#### SFML
+#### Gnuplot
 
-``pip install sfml``
-
-#### Simple SFML GUI
-
-``pip install sfml``
-
-#### SFML Graph
-
-``pip install sfml``
+``apt-get install gnuplot``
 
 ## Demonstration
 

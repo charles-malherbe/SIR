@@ -28,6 +28,7 @@ void Szr::calculate() {
         this->display();
         this->time++;
     }
+    this->draw();
 }
 
 void Szr::display() {
@@ -36,4 +37,9 @@ void Szr::display() {
     cout << GREEN  << "Susceptibles : " << RESET << this->susceptibles << endl;
     cout << GREEN  << "Zombies : "  << RESET << this->zombies << endl;
     cout << GREEN  << "Removed : " << RESET << this->removed << endl;
+}
+
+void Szr::draw() {
+    cout << endl;
+    cout << YELLOW << "Drawing SZR model..." << RESET << endl;
 }

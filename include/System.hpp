@@ -19,12 +19,6 @@ class System {
         ~System();
 
         void run();
-
-    private:
-        sf::RenderWindow *window;
-        sf::Clock clock;
-        sf::Time time;
-        sf::Font font;
 };
 
 #endif

@@ -4,6 +4,8 @@
 #include <string>
 #include <iostream>
 using namespace std;
+#include <sciplot/sciplot.hpp>
+using namespace sciplot;
 
 class Simulation {
 public:

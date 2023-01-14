@@ -17,6 +17,8 @@ protected:
     int beta; // Probability of infection
     int theta; // Probability of death
     int epsilon; // Probability of recovery
+
+    void draw();
 };
 
 #endif
