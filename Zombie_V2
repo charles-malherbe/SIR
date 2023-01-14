@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    double H = 500000;
+    double Z = 1;
+    double M = 0;
+    
+    double H1, Z1, M1;
+    
+    double cHZ = 0.0095; // coeff Humain -> Zombie
+    double cHM = 0.0001; // coeff Humain -> Mort
+    double cMZ = 0.0001; // coeff Mort -> Zombie
+    double cZM = 0.005; // coeff Zombie -> Mort
+    
+    int compte = 0;
+    
+    while (int(H) > 0) {
+        
+        H1 = (0-H*Z*cHZ - H*cHM)*0.0001;    //calcul de la différence de population d'Humains sur un très court intervalle de temps
+        Z1 = (Z*H*cHZ + M*cMZ - Z*H*cZM)*0.0001; // calcul de la différence de population de Zombies sur un très court intervalle de temps
+        M1 = (H*cHM + H*Z*cZM - M*cMZ)*0.0001; //calcul de la différence de population de Morts sur un très court intervalle de temps
+        
+        //On met à jour le nombre d'Humains, de Zombies et de Morts
+        H = H+H1; 
+        Z = Z+Z1;
+        M = M+M1;
+        
+        compte++;
+    }
+    
+    //affichage des résultats dans la console
+    cout<<" Humains : "<<int(H)<<"\n Zombies : "<<int(Z)<<"\n Morts : "<<int(M);
+    cout<<"\n Les Humains ont disparu après la "<<compte<<"eme iterations";
+
+    return 0;
+}
