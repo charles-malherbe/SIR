@@ -10,6 +10,7 @@ Sizr::~Sizr() {
 }
 
 void Sizr::calculate() {
+    cout << endl;
     cout << PURPLE << "Calculating SZR model..." << RESET << endl;
     while (this->time < this->timeMax) {
         this->susceptibles = this->susceptibles - (this->beta * this->susceptibles * this->zombies);
@@ -23,6 +24,7 @@ void Sizr::calculate() {
 }
 
 void Sizr::display() {
+    cout << endl;
     cout << GREEN << "Time : " << RESET << this->time << endl;
     cout << GREEN  << "Susceptibles : " << RESET << this->susceptibles << endl;
     cout << GREEN  << "Zombies : "  << RESET << this->zombies << endl;

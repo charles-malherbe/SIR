@@ -17,11 +17,13 @@ System::~System() {
 
 void System::run() {
     string systemNumber;
+    cout << endl;
     cout << YELLOW <<  "Type de modélisation : " << RESET << endl;
     cout << " 1 - SZR" << endl;
     cout << " 2 - SIZR" << endl;
     cout << YELLOW  << "Entrer le nombre correspondant la modélisation choisi : " << RESET;
     cin >> systemNumber;
+    cout << endl;
     switch (stoi(systemNumber)) {
         case 1: {
             Szr szr;
