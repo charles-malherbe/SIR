@@ -1,12 +1,12 @@
-#ifndef SIMULATION_SIZR_HPP
-#define SIMULATION_SIZR_HPP
+#ifndef SIMULATION_SIZRT_HPP
+#define SIMULATION_SIZRT_HPP
 
 #include "Simulation.hpp"
 
-class Sizr : public Simulation {
+class Sizrt : public Simulation {
 public:
-        Sizr();
-        ~Sizr();
+        Sizrt();
+        ~Sizrt();
 
         void calculate() override;
         void display() override;
@@ -24,6 +24,8 @@ protected:
 
     double epsilon = 0.0001; // Probability of Mort -> Zombie
     double zeta = 0.005; // Probability of Zombie -> Mort
+
+    double eta = 0.0045; // Probability of Zombie -> Human
 
     void draw();
 };

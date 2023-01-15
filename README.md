@@ -10,7 +10,8 @@ Pour lancer le programme, il faut exécuter la commande suivante :  ``make``
 ## Todo
 
 * [ ] SZR
-* [ ] SIZR
+* [ ] SIZR (sans traitement)
+* [ ] SIZR (avec traitement)
 
 ## Prérequis
 
@@ -20,7 +21,7 @@ Pour lancer le programme, il faut exécuter la commande suivante :  ``make``
 
 ## Demonstration
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Terminal screenshot](screenshot.png)
 
 ## Authors
 

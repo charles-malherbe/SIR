@@ -1,0 +1,35 @@
+  #include <iostream>
+
+using namespace std;
+
+int main()
+{
+    double H = 10000;
+    double Z = 1;
+    double M = 0;
+    
+    double H1, Z1, M1;
+    
+    double cHZ = 0.0095; // coeff Humain -> Zombie
+    double cHM = 0.0001; // coeff Humain -> Mort
+    double cMZ = 0.0001; // coeff Mort -> Zombie
+    double cZM = 0.005; // coeff Zombie -> Mort
+    
+    int compte = 0;
+    
+    while (compte < 1) {
+        
+        H1 = H-(H*Z*cHZ + H*cHM);
+        Z1 = Z+(Z*H*cHZ + M*cMZ - Z*H*cZM);
+        M1 = M+(H*cHM + H*Z*cZM - M*cMZ);
+        
+        H = H1;
+        Z = Z1;
+        M = M1;
+        
+        compte++;
+    }
+    cout<<" Humains : "<<int(H)<<"\n Zombies : "<<int(Z)<<"\n Morts : "<<int(M);
+
+    return 0;
+}

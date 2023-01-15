@@ -15,9 +15,10 @@ public:
 protected:
         int removed; // Removed
 
-        double alpha; // Probability of removal (by decapitation)
-        double beta; // Probability of transmission
-        double zeta; // Probability of resurrection (if dead)
+        double beta = 0.0095; // Probability of Human -> Zombie
+        double alpha = 0.0001; // Probability of Human -> Removed
+        double zeta = 0.0001; // Probability of Removed -> Zombie
+        double gamma = 0.005; // Probability of Zombie -> Removed
 
         void draw();
 };

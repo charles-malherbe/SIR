@@ -1,7 +1,7 @@
-#include "../include/Sizr.hpp"
+#include "../include/Sizrt.hpp"
 #include "../include/Colors.hpp"
 
-Sizr::Sizr() : Simulation() {
+Sizrt::Sizrt() : Simulation() {
     cout << BLUE << "Entrer le nombre de personne morte (R) : " << RESET;
     cin >> this->removed;
     cout << BLUE << "Entrer de nombre de naissance par occurence (DEFAULT = 0) : " << RESET;
@@ -18,29 +18,31 @@ Sizr::Sizr() : Simulation() {
     cin >> this->delta;
     cout << BLUE << "Entrer le taux de retrait Zombie -> Mort (DEFAULT = 0.005) : " << RESET;
     cin >> this->zeta;
+    cout << BLUE << "Entrer le taux de rétablissement Zombie -> Humain (DEFAULT = 0.0045) : " << RESET;
+    cin >> this->eta;
 }
 
-Sizr::~Sizr() {
+Sizrt::~Sizrt() {
 }
 
-void Sizr::calculate() {
+void Sizrt::calculate() {
     cout << endl;
-    cout << PURPLE << "Calculating SZR model..." << RESET << endl;
+    cout << PURPLE << "Calculating SIZR WITH TREATMENT model..." << RESET << endl;
     while (this->time < this->timeMax) {
         this->display();
         // Calcul de la différence de population d'Humains sur un très court intervalle de temps
-        this->susceptibles = this->susceptibles + (this->tauxNaissance - this->susceptibles * this->zombies * this->alpha - this->susceptibles * this->gamma) * 0.0001;
+        this->susceptibles = this->susceptibles + (this->tauxNaissance - this->susceptibles * this->zombies *this->alpha - this->susceptibles * this->epsilon + this->zombies * this->eta) * 0.0001;
         // Calcul de la différence de population d'Infectés sur un très court intervalle de temps
-        this->infected = this->infected + (this->susceptibles * this->zombies *this->alpha - this->beta * this->infected - this->delta * this->infected) * 0.0001;
+        this->infected = this->infected + (this->susceptibles * this->zombies * this->alpha - this->beta * this->infected - this->gamma * this->infected) * 0.0001;
         // Calcul de la différence de population de Zombies sur un très court intervalle de temps
-        this->zombies = this->zombies + (this->beta * this->infected + this->removed * this->epsilon - this->zombies * this->susceptibles * this->zeta) * 0.0001;
+        this->zombies = this->zombies + (this->beta * this->infected + this->removed * this->delta - this->zombies * this->susceptibles * this->zeta - this->zombies * this->eta) * 0.0001;
         // Calcul de la différence de population de Morts sur un très court intervalle de temps
-        this->removed = this->removed + (this->susceptibles * this->gamma + this->delta * this->infected + this->susceptibles * this->zombies * this->zeta - this->removed * this->epsilon) * 0.0001;
+        this->removed = this->removed + (this->susceptibles * this->epsilon + this->gamma * this->infected + this->susceptibles * this->zombies * this->zeta - this->removed * this->delta) * 0.0001;
         this->time++;
     }
 }
 
-void Sizr::display() {
+void Sizrt::display() {
     cout << endl;
     cout << GREEN << "Time : " << RESET << this->time << endl;
     cout << GREEN  << "Susceptibles : " << RESET << this->susceptibles << endl;
@@ -49,7 +51,7 @@ void Sizr::display() {
     cout << GREEN  << "Removed : " << RESET << this->removed << endl;
 }
 
-void Sizr::draw() {
+void Sizrt::draw() {
     cout << endl;
-    cout << YELLOW << "Drawing SIZR model..." << RESET << endl;
+    cout << YELLOW << "Drawing SIZR WITH TREATMENT model..." << RESET << endl;
 }
