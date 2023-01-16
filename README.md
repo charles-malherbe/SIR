@@ -9,17 +9,16 @@ Pour lancer le programme, il faut exécuter la commande suivante :  ``make``
 
 ## Todo
 
-* [ ] SZR
-* [ ] SIZR (sans traitement)
-* [ ] SIZR (avec traitement)
+* [x] SZR
+* [x] SIZR (sans traitement)
+* [x] SIZR (avec traitement)
 
 ## Prérequis
 
-#### Gnuplot
+#### Matplotlib
 
-``apt-get install gnuplot``
-
-## Demonstration
+``sudo apt-get install gnuplot``
+``sudo apt-get install python-pip``
 
 ![Terminal screenshot](screenshot.png)
 

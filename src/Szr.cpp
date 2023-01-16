@@ -1,5 +1,7 @@
 #include "../include/Szr.hpp"
 #include "../include/Colors.hpp"
+#include "../include/matplotlibcpp.hpp"
+namespace plt = matplotlibcpp;
 
 Szr::Szr() : Simulation() {
     cout << BLUE << "Entrer le nombre de personne morte (R) : " << RESET;
@@ -21,13 +23,7 @@ Szr::~Szr() {
 void Szr::calculate() {
     cout << endl;
     cout << PURPLE << "Calculating SZR model..." << RESET << endl;
-    while (this->time < this->timeMax) {
-        this->display();
-        this->susceptibles = this->susceptibles - (this->susceptibles * this->zombies * this->beta + this->susceptibles * this->alpha);
-        this->zombies = this->zombies + (this->susceptibles * this->zombies * this->beta + this->removed * this->zeta - this->zombies * this->susceptibles * this->gamma);
-        this->removed = this->removed + (this->susceptibles * this->alpha + this->susceptibles * this->zombies * this->gamma - this->removed * this->zeta);
-        this->time++;
-    }
+
     this->draw();
 }
 
@@ -40,6 +36,6 @@ void Szr::display() {
 }
 
 void Szr::draw() {
-    cout << endl;
-    cout << YELLOW << "Drawing SZR model..." << RESET << endl;
+    plt::plot({1,3,2,4});
+    plt::show();
 }

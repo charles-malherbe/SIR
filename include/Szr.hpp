@@ -20,6 +20,8 @@ protected:
         double zeta = 0.0001; // Probability of Removed -> Zombie
         double gamma = 0.005; // Probability of Zombie -> Removed
 
+        vector<int> removedVec;
+
         void draw();
 };
 

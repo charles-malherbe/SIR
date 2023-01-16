@@ -30,14 +30,19 @@ void Sizrt::calculate() {
     cout << PURPLE << "Calculating SIZR WITH TREATMENT model..." << RESET << endl;
     while (this->time < this->timeMax) {
         this->display();
+        this->timeVec.push_back(this->time);
         // Calcul de la différence de population d'Humains sur un très court intervalle de temps
         this->susceptibles = this->susceptibles + (this->tauxNaissance - this->susceptibles * this->zombies *this->alpha - this->susceptibles * this->epsilon + this->zombies * this->eta) * 0.0001;
+        this->susceptiblesVec.push_back(this->susceptibles);
         // Calcul de la différence de population d'Infectés sur un très court intervalle de temps
         this->infected = this->infected + (this->susceptibles * this->zombies * this->alpha - this->beta * this->infected - this->gamma * this->infected) * 0.0001;
+        this->infectedVec.push_back(this->infected);
         // Calcul de la différence de population de Zombies sur un très court intervalle de temps
         this->zombies = this->zombies + (this->beta * this->infected + this->removed * this->delta - this->zombies * this->susceptibles * this->zeta - this->zombies * this->eta) * 0.0001;
+        this->zombiesVec.push_back(this->zombies);
         // Calcul de la différence de population de Morts sur un très court intervalle de temps
         this->removed = this->removed + (this->susceptibles * this->epsilon + this->gamma * this->infected + this->susceptibles * this->zombies * this->zeta - this->removed * this->delta) * 0.0001;
+        this->removedVec.push_back(this->removed);
         this->time++;
     }
 }
@@ -46,8 +51,8 @@ void Sizrt::display() {
     cout << endl;
     cout << GREEN << "Time : " << RESET << this->time << endl;
     cout << GREEN  << "Susceptibles : " << RESET << this->susceptibles << endl;
-    cout << GREEN  << "Zombies : "  << RESET << this->zombies << endl;
     cout << GREEN  << "Infected : " << RESET << this->infected << endl;
+    cout << GREEN  << "Zombies : "  << RESET << this->zombies << endl;
     cout << GREEN  << "Removed : " << RESET << this->removed << endl;
 }
 
