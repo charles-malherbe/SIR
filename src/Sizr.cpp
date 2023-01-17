@@ -17,15 +17,15 @@ void Sizr::calculate() {
         this->display();
         int s1, i1, z1, r1;
 
-        s1 = this->susceptibles + (this->naissance - this->susceptibles * this->zombies * this->alpha - this->susceptibles * this->gamma) * 0.0001;
-        i1 = this->infected + (this->susceptibles * this->zombies *this->alpha - this->beta * this->infected - this->delta * this->infected) * 0.0001;
-        z1 = this->zombies + (this->beta * this->infected + this->removed * this->epsilon - this->zombies * this->susceptibles * this->zeta) * 0.0001;
-        r1 = this->removed + (this->susceptibles * this->gamma + this->delta * this->infected + this->susceptibles * this->zombies * this->zeta - this->removed * this->epsilon) * 0.0001;
+        s1 = (0 - this->susceptibles*this->zombies*this->beta - this->susceptibles*this->gamma)*0.0001;
+        i1 = (this->susceptibles*this->zombies*this->beta - this->beta*this->infected- this->delta*this->infected)*0.0001;
+        z1 = (this->beta*this->infected + this->removed*this->epsilon - this->zombies*this->susceptibles*this->zeta)*0.0001;
+        r1 = (this->susceptibles*this->gamma + this->delta*this->infected + this->susceptibles*this->zombies*this->zeta - this->removed*this->epsilon)*0.0001;
 
-        this->susceptibles = s1;
-        this->infected = i1;
-        this->zombies = z1;
-        this->removed = r1;
+        this->susceptibles += s1;
+        this->infected += i1;
+        this->zombies += z1;
+        this->removed += r1;
 
         this->timeVec.push_back(this->time);
         this->susceptiblesVec.push_back(this->susceptibles);
@@ -65,7 +65,7 @@ void Sizr::draw() {
     plot.drawCurve(this->timeVec, this->susceptiblesVec).label("Susceptibles").lineColor("green");
     plot.drawCurve(this->timeVec, this->infectedVec).label("Infected").lineColor("purple");
     plot.drawCurve(this->timeVec, this->zombiesVec).label("Zombies").lineColor("red");
-    plot.drawCurve(this->timeVec, this->removedVec).label("Removed").lineColor("yellow");
+    plot.drawCurve(this->timeVec, this->removedVec).label("Removed").lineColor("cyan");
     Figure fig = {{plot}};
     fig.title("SIZR model");
     fig.palette("dark2");

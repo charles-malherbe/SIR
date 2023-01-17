@@ -63,7 +63,7 @@ void Sizrt::draw() {
     plot.drawCurve(this->timeVec, this->susceptiblesVec).label("Susceptibles").lineColor("green");
     plot.drawCurve(this->timeVec, this->infectedVec).label("Infected").lineColor("purple");
     plot.drawCurve(this->timeVec, this->zombiesVec).label("Zombies").lineColor("red");
-    plot.drawCurve(this->timeVec, this->removedVec).label("Removed").lineColor("yelllow");
+    plot.drawCurve(this->timeVec, this->removedVec).label("Removed").lineColor("cyan");
     Figure fig = {{plot}};
     fig.title("SIZR with treatment model");
     fig.palette("dark2");
