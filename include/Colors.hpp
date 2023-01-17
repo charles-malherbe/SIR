@@ -6,6 +6,7 @@
     #define RED "\e[1;31m"
     #define PURPLE "\e[1;35m"
     #define YELLOW "\e[1;33m"
+    #define CYAN "\e[1;36m"
     #define RESET "\e[0m"
 
 #endif

@@ -24,19 +24,16 @@ void System::run() {
         case 1: {
             Szr szr;
             szr.calculate();
-            szr.display();
             break;
         }
         case 2: {
             Sizr sizr;
             sizr.calculate();
-            sizr.display();
             break;
         }
         case 3: {
             Sizrt sizrt;
             sizrt.calculate();
-            sizrt.display();
             break;
         }
         default : {

@@ -21,8 +21,7 @@ public:
     virtual void display() = 0;
 
 protected:
-    int timeMax; // Time
-    int time = 1; // Time
+    int time = 0; // Time
 
     int susceptibles; // Susceptible (s)
     int zombies; // Zombies (z)

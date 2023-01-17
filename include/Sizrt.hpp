@@ -12,7 +12,7 @@ public:
         void display() override;
 
 protected:
-    int tauxNaissance = 0; // Time of incubation
+    int naissance = 0; // Time of incubation
     int infected; // Infected
     int removed; // Removed
 

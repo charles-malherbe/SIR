@@ -15,11 +15,29 @@ Pour lancer le programme, il faut exécuter la commande suivante :  ``make``
 
 ## Prérequis
 
-#### Matplotlib
+#### Gnuplot
 
 ``apt-get install gnuplot``
 
-![Terminal screenshot](screenshot.png)
+#### Sciplot
+
+``git clone https://github.com/sciplot/sciplot --recursive``
+
+``cd sciplot``
+
+``mkdir build && cd build``
+
+``cmake ..``
+
+``make``
+
+``make install``
+
+## Screenshots
+
+![Terminal screenshot](screenshot_1.png)
+
+![Sciplot screenshot](screenshot_2.png)
 
 ## Authors
 

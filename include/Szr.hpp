@@ -13,6 +13,7 @@ public:
         void display() override;
 
 protected:
+        int naissance = 0; // Time of incubation
         int removed; // Removed
 
         double beta = 0.0095; // Probability of Human -> Zombie
