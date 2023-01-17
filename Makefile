@@ -4,7 +4,7 @@ CC = g++
 CFLAGS = -std=c++17 -I ./include/
 
 all: clean
-	$(CC) main.cpp $(SRC) -o $(NAME) $(CFLAGS) $(LIBS)
+	$(CC) $(SRC) -o $(NAME) $(CFLAGS) $(LIBS)
 
 clean:
 	rm -f $(OBJ) main

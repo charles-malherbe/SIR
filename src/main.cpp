@@ -1,4 +1,4 @@
-#include "./include/System.hpp"
+#include "System.hpp"
 
 int main() {
     System system;
