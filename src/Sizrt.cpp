@@ -45,18 +45,39 @@ void Sizrt::calculate() {
         this->removedVec.push_back(this->removed);
         this->time++;
     }
+    this->draw();
 }
 
 void Sizrt::display() {
     cout << endl;
-    cout << GREEN << "Time : " << RESET << this->time << endl;
-    cout << GREEN  << "Susceptibles : " << RESET << this->susceptibles << endl;
+    cout << GREEN << "Time(s) : " << RESET << this->time << endl;
+    cout << GREEN  << "Susceptible(s) : " << RESET << this->susceptibles << endl;
     cout << GREEN  << "Infected : " << RESET << this->infected << endl;
-    cout << GREEN  << "Zombies : "  << RESET << this->zombies << endl;
+    cout << GREEN  << "Zombie(s) : "  << RESET << this->zombies << endl;
     cout << GREEN  << "Removed : " << RESET << this->removed << endl;
 }
 
 void Sizrt::draw() {
-    cout << endl;
-    cout << YELLOW << "Drawing SIZR WITH TREATMENT model..." << RESET << endl;
+    Plot2D plot;
+    plot.fontName("Palatino");
+    plot.fontSize(12);
+    plot.xlabel("Times");
+    plot.ylabel("Population");
+    plot.grid().show();
+    plot.legend()
+        .atTop()
+        .fontSize(12)
+        .displayHorizontal()
+        .displayExpandWidthBy(1);
+    plot.drawCurve(this->timeVec, this->susceptiblesVec).label("Susceptibles").lineColor("green");
+    plot.drawCurve(this->timeVec, this->infectedVec).label("Infected").lineColor("purple");
+    plot.drawCurve(this->timeVec, this->zombiesVec).label("Zombies").lineColor("red");
+    plot.drawCurve(this->timeVec, this->removedVec).label("Removed").lineColor("yelllow");
+    Figure fig = {{plot}};
+    fig.title("SIZR model");
+    fig.palette("dark2");
+    Canvas canvas = {{fig}};
+    canvas.size(1500,750);
+    canvas.show();
+    canvas.save("./render/plot_sizrt.png");
 }

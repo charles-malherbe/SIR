@@ -47,6 +47,7 @@ void Sizr::calculate() {
         this->removedVec.push_back(this->removed);
         this->time++;
     }
+    this->draw();
 }
 
 void Sizr::display() {
@@ -59,6 +60,27 @@ void Sizr::display() {
 }
 
 void Sizr::draw() {
-    cout << endl;
-    cout << YELLOW << "Drawing SIZR model..." << RESET << endl;
+    Plot2D plot;
+    plot.size(1500, 750);
+    plot.fontName("Palatino");
+    plot.fontSize(12);
+    plot.xlabel("Times");
+    plot.ylabel("Population");
+    plot.grid().show();
+    plot.legend()
+        .atTop()
+        .fontSize(12)
+        .displayHorizontal()
+        .displayExpandWidthBy(1);
+    plot.drawCurve(this->timeVec, this->susceptiblesVec).label("Susceptibles").lineColor("green");
+    plot.drawCurve(this->timeVec, this->infectedVec).label("Infected").lineColor("purple");
+    plot.drawCurve(this->timeVec, this->zombiesVec).label("Zombies").lineColor("red");
+    plot.drawCurve(this->timeVec, this->removedVec).label("Removed").lineColor("yellow");
+    Figure fig = {{plot}};
+    fig.title("SIZR model");
+    fig.palette("dark2");
+    Canvas canvas = {{fig}};
+    canvas.size(1500,750);
+    canvas.show();
+    canvas.save("./render/plot_sizr.png");
 }

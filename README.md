@@ -17,8 +17,7 @@ Pour lancer le programme, il faut exécuter la commande suivante :  ``make``
 
 #### Matplotlib
 
-``sudo apt-get install gnuplot``
-``sudo apt-get install python-pip``
+``apt-get install gnuplot``
 
 ![Terminal screenshot](screenshot.png)
 

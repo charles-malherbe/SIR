@@ -2,12 +2,15 @@
 #define SIMULATION_SIMULATION_HPP
 
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
-#include <iostream>
 #include <algorithm>
 #include <cmath>
 using namespace std;
+
+#include <sciplot/sciplot.hpp>
+using namespace sciplot;
 
 class Simulation {
 public:
